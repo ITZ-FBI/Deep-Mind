@@ -1,0 +1,147 @@
+<!-- Full Home Page with Dark Mode Only and Categories Next to Logo -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepMindInfo - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #222;
+            color: #f4f4f4;
+        }
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+        }
+        .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            transition: 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center;
+            background-size: cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+        }
+        /* Cards */
+        .card {
+            border: none;
+            background: #333;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+        /* Categories List */
+        .navbar-nav.categories {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with Categories Next to Logo -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">DeepMindInfo</a>
+            <ul class="navbar-nav categories ms-3">
+                <li class="nav-item"><a class="nav-link" href="Car Page.html".html">Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="AI tools page.html">AI Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Home Page.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1>Welcome to DeepMindInfo</h1>
+            <p>Your go-to Get information for Cars, Games, AI Tools, and Gadgets.</p>
+            <a href="#about" class="btn btn-warning btn-lg mt-3">Learn More</a>
+        </div>
+    </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About DeepMindInfo</h2>
+            <p>We specialize in providing detailed and reliable information about Cars, Games, AI Tools, and Gadgets. Our mission is to keep you informed with the latest trends, insights, and technology updates in these categories.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-dark">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <p>At DeepMindInfo, we deliver well-researched content on:</p>
+            <ul class="list-unstyled text-white">
+                <li><i class="fas fa-car"></i> Latest trends in the automobile industry</li>
+                <li><i class="fas fa-gamepad"></i> Game reviews, updates, and recommendations</li>
+                <li><i class="fas fa-robot"></i> AI tool breakdowns and how they can help you</li>
+                <li><i class="fas fa-mobile-alt"></i> The best gadgets to enhance your daily life</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions, suggestions, or requests, feel free to reach out.</p>
+            <p>Email: <strong>support@deepmindinfo.com</strong></p>
+        </div>
+    </section>
+</body>
+</html>
