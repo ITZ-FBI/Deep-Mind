@@ -1,0 +1,174 @@
+<!-- Category Page Layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepMindInfo - Category</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #222;
+            color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            padding: 5px 10px;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .home-link {
+            color: #fff;
+            font-size: 16px;
+            margin-left: auto;
+            text-decoration: none;
+        }
+
+        /* Search Bar */
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-box {
+            width: 60%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        /* Category Layout */
+        .category-header {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Prevents stretching */
+            padding: 20px;
+        }
+
+        .card {
+            width: 250px; /* Fixed width to prevent stretching */
+            height: 300px; /* Fixed height */
+            border: none;
+            background: #333;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Prevents stretching */
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hidden {
+            display: none !important; /* Ensures proper hiding */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with Website Name and Home Link -->
+    <nav class="navbar navbar-dark d-flex">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="index.html">DeepMindInfo</a>
+            <a class="home-link" href="index.html">Home</a>
+        </div>
+    </nav>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search content...">
+    </div>
+    
+    <!-- Category Header -->
+    <div class="category-header">
+        <h2>Gadgets&nbsp;</h2>
+    </div>
+    
+    <!-- Category Grid -->
+    <div class="container">
+        <div class="grid-container" id="contentGrid">
+            <div class="card" data-url="GTA 5.html">
+                <img src="https://wallpapers.com/images/high/gta-5-photo-collage-qpjtjdxwbwrk4gyj.webp" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">GTA 5</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    $(document).ready(function () {
+        $('#searchInput').on('input', function () {
+            let query = $(this).val().toLowerCase().trim();
+            let anyVisible = false;
+
+            // Reset the grid content (removes 'No results found' if any)
+            $('#contentGrid p').remove();
+
+            $('.card').each(function () {
+                let title = $(this).find('.card-title').text().toLowerCase().trim();
+
+                // Allow matching of all characters
+                if (title.includes(query)) {
+                    $(this).removeClass('hidden');
+                    anyVisible = true;
+                } else {
+                    $(this).addClass('hidden');
+                }
+            });
+
+            // Show "No results found" only if nothing matches
+            if (!anyVisible) {
+                $('#contentGrid').append('<p style="color: white; text-align: center;">No results found</p>');
+            }
+        });
+
+        $('.card').on('click', function () {
+            let url = $(this).data('url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
